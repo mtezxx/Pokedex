@@ -7,3 +7,4 @@ function Pokedex() {
     const [prevUrl, setPrevUrl] = useState("");
 }
 
+const fetchData = async 

@@ -1,13 +1,15 @@
-import React from "react";
-import {BrowserRoute as Router, Route, Switch, } from 'react-router-dom';
+import React from 'react';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import Pokedex from './components/Pokedex';
+import PokemonDetail from './components/PokemonDetail';
 
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route></Route>
-        <Route></Route>
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Pokedex />} />
+        <Route path="/about/:id" element={<PokemonDetail />} />
+      </Routes>
     </Router>
   );
 }

@@ -7,4 +7,16 @@ function Pokedex() {
     const [prevUrl, setPrevUrl] = useState("");
 }
 
-const fetchData = async 
+const fetchData = async  (url) => {
+    try{
+        const response = await axios.get(url);
+        const result = response.data.result;
+
+        const pokemonDetails = await Promise.all(
+            result.map(async(pokemon) => {
+                const detailResponse = await axios.get(pokemon.url);
+                return detailResponse.data;
+            } )
+        )
+    }
+}
